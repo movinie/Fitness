@@ -1,0 +1,11 @@
+D:\тз\sendmessages\SendMessages\SendMessages.Service\bin\Debug\SendMessages.Service.dll
+D:\тз\sendmessages\SendMessages\SendMessages.Service\bin\Debug\SendMessages.Service.pdb
+D:\тз\sendmessages\SendMessages\SendMessages.Service\bin\Debug\SendMessages.Data.dll
+D:\тз\sendmessages\SendMessages\SendMessages.Service\bin\Debug\SendMessages.Models.dll
+D:\тз\sendmessages\SendMessages\SendMessages.Service\bin\Debug\EntityFramework.dll
+D:\тз\sendmessages\SendMessages\SendMessages.Service\bin\Debug\SendMessages.Data.pdb
+D:\тз\sendmessages\SendMessages\SendMessages.Service\bin\Debug\SendMessages.Models.pdb
+D:\тз\sendmessages\SendMessages\SendMessages.Service\bin\Debug\EntityFramework.xml
+D:\тз\sendmessages\SendMessages\SendMessages.Service\obj\Debug\SendMessages.Service.csprojResolveAssemblyReference.cache
+D:\тз\sendmessages\SendMessages\SendMessages.Service\obj\Debug\SendMessages.Service.dll
+D:\тз\sendmessages\SendMessages\SendMessages.Service\obj\Debug\SendMessages.Service.pdb

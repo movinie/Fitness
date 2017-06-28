@@ -1,0 +1,68 @@
+﻿<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        Список клиентов
+    </div>
+    <div class='panel-body'>
+        <div>
+            <search-list [title]='searchTitle' (change)="criteriaChange($event)"></search-list>
+        </div>
+        <div class='table-responsive'>            
+            <div *ngIf='clients && clients.length==0' class="alert alert-info" role="alert">Список клиентов пуст</div>
+            <table class='table table-striped' *ngIf='clients; else loadingScreen;'>
+                <thead>
+                    <tr>
+                        <th>Имя</th>
+                        <th>Фамилия</th>
+                        <th>Email</th>
+                        <th>Пол</th>
+                        <th>Дата регистрации</th>
+                        <th>Адрес</th>
+                        <th>
+                            <button class="btn btn-primary" (click)="addClient()">Добавить нового клиента</button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let client of clients | clientFilter:listFilter">
+                        <td>{{client.FirstName}}</td>
+                        <td>{{client.LastName}}</td>
+                        <td>{{client.Email}}</td>
+                        <td>{{client.Gender}}</td>
+                        <td>{{client.Date}}</td>
+                        <td>{{client.Zip}}, {{client.Country}}, {{client.City}}</td>
+                        <td>
+                            <button title="Редактировать" class="btn btn-primary" (click)="editClient(client.ClientId)">Редактировать</button>
+                            <button title="Удалить" class="btn btn-danger" (click)="deleteClient(client.ClientId)">Удалить</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+                    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                        <li [ngClass]="{disabled:pager.currentPage === 1}">
+                            <a (click)="setPage(1)">Первая</a>
+                        </li>
+                        <li [ngClass]="{disabled:pager.currentPage === 1}">
+                            <a (click)="setPage(pager.currentPage - 1)">Предыдущая</a>
+                        </li>
+                        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                            <a (click)="setPage(page)">{{page}}</a>
+                        </li>
+                        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                            <a (click)="setPage(pager.currentPage + 1)">Следующая</a>
+                        </li>
+                        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                            <a (click)="setPage(pager.totalPages)">Последняя</a>
+                        </li>
+                    </ul>
+            <ng-template #loadingScreen><div class="alert alert-info" role="alert">
+                <md-progress-spinner mode="indeterminate" style="width:50px; height:50px">
+                    </md-progress-spinner>Загрузка...</div></ng-template>
+        </div>
+        <div *ngIf="msg" role="alert" class="alert alert-info alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Закрыть"><span aria-hidden="true">&times;</span></button>
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Ошибка:</span>
+            {{msg}}
+        </div>
+    </div>
+</div>

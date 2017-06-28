@@ -1,0 +1,9 @@
+D:\тз\fitnessclub\1\FitnessClub.Models\bin\Debug\FitnessClub.Model.dll
+D:\тз\fitnessclub\1\FitnessClub.Models\bin\Debug\FitnessClub.Model.pdb
+D:\тз\fitnessclub\1\FitnessClub.Models\obj\Debug\FitnessClub.Model.dll
+D:\тз\fitnessclub\1\FitnessClub.Models\obj\Debug\FitnessClub.Model.pdb
+D:\fitnessclub\FitnessClub.Models\bin\Debug\FitnessClub.Model.dll
+D:\fitnessclub\FitnessClub.Models\bin\Debug\FitnessClub.Model.pdb
+D:\fitnessclub\FitnessClub.Models\obj\Debug\FitnessClub.Model.csprojResolveAssemblyReference.cache
+D:\fitnessclub\FitnessClub.Models\obj\Debug\FitnessClub.Model.dll
+D:\fitnessclub\FitnessClub.Models\obj\Debug\FitnessClub.Model.pdb

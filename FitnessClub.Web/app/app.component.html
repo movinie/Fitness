@@ -1,0 +1,10 @@
+﻿<div>    
+        <div class='container'>
+            <router-outlet>
+                <div class="loading-overlay" *ngIf="loading">
+                    <md-progress-bar mode="indeterminate"></md-progress-bar>
+                </div>
+            </router-outlet>
+        </div>
+</div>
+

@@ -1,0 +1,100 @@
+﻿<form novalidate (ngSubmit)="onSubmit(clientFrm)" [formGroup]="clientFrm">
+    <div>
+        <h1 md-dialog-title><span>{{modalTitle}}</span></h1>
+    </div>
+    <div md-dialog-content class="md-dialog-container">
+        <div class="frm-ctrl">
+            <md-input-container>
+                <input #firstname maxlength="50" mdInput placeholder="Имя" formControlName="FirstName">
+                <md-hint align="end">{{firstname.value.length}} / 50</md-hint>
+            </md-input-container>
+            <div *ngIf="formErrors.FirstName" class="text-danger">
+                {{ formErrors.FirstName }}
+            </div>
+        </div>
+        <div class="frm-ctrl">
+            <md-input-container>
+                <input #lastname maxlength="50" mdInput placeholder="Фамилия" formControlName="LastName">
+                <md-hint align="end">{{lastname.value.length}} / 50</md-hint>
+            </md-input-container>
+            <div *ngIf="formErrors.LastName" class="text-danger">
+                {{ formErrors.LastName }}
+            </div>
+        </div>
+        <div class="frm-ctrl">
+            <md-input-container>
+                <input type="email" mdInput placeholder="Email" formControlName="Email">
+            </md-input-container>
+            <div *ngIf="formErrors.Email" class="text-danger">
+                {{ formErrors.Email }}
+            </div>
+        </div>
+        <div class="frm-ctrl">Пол</div>
+            <div>
+                <md-radio-group formControlName="Gender">
+                    <div *ngFor="let gndr of gender">
+                        <md-radio-button [value]="gndr">
+                            {{gndr}}
+                        </md-radio-button>
+                    </div>
+                </md-radio-group>
+                <div *ngIf="formErrors.Gender" class="text-danger">
+                    {{ formErrors.Gender }}
+                </div>
+            </div>
+            <div class="frm-ctrl">Предпочтения</div>
+            <div formArrayName="ClientSports">
+                <div *ngFor="let skill of ClientSports.controls; let i=index" [formGroupName]="i">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" formControlName="Selected" />
+                            {{clientSports[i].Name}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="frm-ctrl">
+                <md-input-container style="width:50%">
+                    <input mdInput [mdDatepicker]="picker" placeholder="Дата регистрации" formControlName="Date">
+                    <button mdSuffix [mdDatepickerToggle]="picker"></button>
+                </md-input-container>
+                <md-datepicker #picker></md-datepicker>
+                <div *ngIf="formErrors.Date" class="text-danger">
+                    {{ formErrors.Date }}
+                </div>
+            </div>
+            <div class="frm-ctrl">
+                <md-select placeholder="Страна" style="width:50%" formControlName="Country">
+                    <md-option *ngFor="let ctry of countries" [value]="ctry.value">
+                        {{ ctry.viewValue }}
+                    </md-option>
+                </md-select>
+                <div *ngIf="formErrors.Country" class="text-danger">
+                    {{ formErrors.Country }}
+                </div>
+            </div>
+            <div class="frm-ctrl">
+                <div class="line_ctrl">
+                    <md-input-container class="example-full-width">
+                        <input mdInput placeholder="Город" formControlName="City">
+                    </md-input-container>
+                    <div *ngIf="formErrors.City" class="text-danger">
+                        {{ formErrors.City }}
+                    </div>
+                </div>
+                <div class="line_ctrl">
+                    <md-input-container class="example-full-width">
+                        <input mdInput #postalCode maxlength="6" placeholder="Индекс" formControlName="Zip">
+                        <md-hint align="end">{{postalCode.value.length}} / 6</md-hint>
+                    </md-input-container>
+                    <div *ngIf="formErrors.Zip" class="text-danger">
+                        {{ formErrors.Zip }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    <md-dialog-actions class="md-dialog-footer" align="end">
+        <button color="warn" type="button" md-raised-button (click)="dialogRef.close()">Отмена</button>&nbsp;
+        <button type="submit" color="primary" [disabled]="clientFrm.invalid" md-raised-button>{{modalBtnTitle}}</button>
+        </ md-dialog-actions>
+</form>

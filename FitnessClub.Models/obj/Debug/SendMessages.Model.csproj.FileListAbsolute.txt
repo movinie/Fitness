@@ -1,0 +1,4 @@
+D:\тз\sendmessages\SendMessages\SendMessages.Models\bin\Debug\SendMessages.Models.dll
+D:\тз\sendmessages\SendMessages\SendMessages.Models\bin\Debug\SendMessages.Models.pdb
+D:\тз\sendmessages\SendMessages\SendMessages.Models\obj\Debug\SendMessages.Models.dll
+D:\тз\sendmessages\SendMessages\SendMessages.Models\obj\Debug\SendMessages.Models.pdb
